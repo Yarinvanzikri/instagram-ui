@@ -5,43 +5,48 @@ import {UserContext} from '../App';
 import './Login.scss'
 
 import {login} from "../services/login.service";
-
+import {me} from '../services/user.service'
+import {useHistory} from "react-router-dom";
 function Login(values) {
-    const {loggedIn, setLoggedIn} = useContext(UserContext);
-    console.log(loggedIn)
+    const history = useHistory();
+    const {setUser} = useContext(UserContext);
+
+
     async function submit(values) {
         try{
             const {token} = await login(values);
-            setLoggedIn(true);
-            localStorage.setItem('loggedIn', token);
+            localStorage.setItem('token', token);
+            const loggedUser = await me();
+            setUser(loggedUser);
+            history.push('/')
         } catch (e) {
             console.error(e);
         }
     }
 
     return (
-        <div>
-            <h1 className={"title"}>Sign in now</h1>
+        <div className={"Login"}>
+            <h1 className={"Login__title"}>Sign in now</h1>
             <Formik
                 validationSchema={loginSchema}
                 initialValues={{username:'', password:'' }}
                 onSubmit={submit}>
                 <Form>
-                    <div>
+                    <div className={"form-group"}>
                         <label htmlFor={"username"}>Username:</label>
-                    </div>
-                        <Field name={"username"} id={"username"}/>
-                        <div>
-                            <ErrorMessage name="username" component="div"/>
-                        </div>
-                    <div>
-                        <label htmlFor={"password"}>Password:</label>
-                    </div>
-                        <Field type={'password'} name={"password"} id={"password"}/>
-                        <ErrorMessage name="password" component="div"/>
 
+                        <Field name={"username"} id={"username"} placeholder={"Username"}/>
+                        <div >
+                            <ErrorMessage className="error" name="username" component="div"/>
+                        </div>
+                    </div>
+                    <div className={"form-group"} >
+                        <label htmlFor={"password"}>Password:</label>
+                        <Field type={'password'} name={"password"} id={"password"} placeholder="Password" />
+                        <ErrorMessage className="error" name="password" component="div"/>
+                    </div>
                     <div>
-                        <button type={"submit"}>Sign in </button>
+                        <button className={"Login__btn"} type={"submit"}>Sign in </button>
                     </div>
                 </Form>
             </Formik>

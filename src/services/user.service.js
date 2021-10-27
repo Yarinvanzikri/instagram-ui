@@ -23,11 +23,28 @@ export async function login({ username, password }) {
     return await res.json();
 }
 
+export async function me() {
+    const token = localStorage.getItem('token');
+    if (!token) {
+        return {};
+    }
+    const res = await fetch(`${config.apiUrl}/user/me`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: token
+        },
+    });
+    return await res.json();
+}
+
 export async function checkAvailabilityUser(username) {
     const res = await fetch(`${config.apiUrl}/get`)
         .then((res) => res.json())
         .then((users) => {
+            console.log('users ' , users)
             const isValid = users.find(user => user.username === username);
+            console.log('isValid ',isValid)
             return isValid;
         })
         .catch(false);
