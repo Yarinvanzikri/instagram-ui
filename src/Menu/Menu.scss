@@ -1,0 +1,13 @@
+@import 'src/App';
+li{
+  list-style: none;
+  display: inline-block;
+}
+.icon {
+  color : $textBlackColor;
+  margin-right: 10px;
+
+  &:hover {
+    opacity: 50%;
+  }
+}

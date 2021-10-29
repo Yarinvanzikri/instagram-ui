@@ -7,6 +7,7 @@ import Feed from "./Feed/Feed";
 import Header from "./Header/Header";
 import {me} from './services/user.service'
 import PostCreate from "./PostCreate/PostCreate";
+import Profile from "./Profile/Profile";
 
 export const UserContext = createContext();
 
@@ -14,6 +15,7 @@ function App() {
     //const [loggedIn, setLoggedIn] = useState(!!localStorage.getItem('loggedIn'));
     const history = useHistory()
     const [user, setUser] = useState({});
+    console.log(user)
 
     useEffect(()=> {
         me()
@@ -37,6 +39,9 @@ function App() {
         <div className="App">
             {isLoggedIn(user) && <Header />}
             <Switch>
+                <Route  path={`/profile/:username`}>
+                    <Profile/>
+                </Route>
                 <Route  path={"/register"}>
                     <Register />
                 </Route>

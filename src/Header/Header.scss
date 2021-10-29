@@ -9,4 +9,9 @@
   align-items: center;
   border: 1px solid $textGrayColor;
   box-shadow: $shadow;
+
+
+  &__Logo {
+    text-decoration: none;
+  }
 }

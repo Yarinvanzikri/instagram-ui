@@ -18,6 +18,17 @@ export async function createPost(post) {
     });
     return  res.json()
 }
+export async function getPosts(username) {
+    const token = localStorage.getItem("token");
+    if(!token) return [];
+    const res = await fetch(config.apiUrl + '/post/' + username, {
+        method: 'GET',
+        headers: {
+            'Authorization': token
+        }
+    });
+    return res.json();
+}
 
 export async function getFeed() {
     const res = await fetch(config.apiUrl+'/post');

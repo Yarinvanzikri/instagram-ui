@@ -38,6 +38,19 @@ export async function me() {
     return await res.json();
 }
 
+export async function getUser(username) {
+    const token = localStorage.getItem('token');
+    const res = await fetch(`${config.apiUrl}/user/${username}`,{
+        headers: {
+            'content-type': "application/json",
+            Authorization: token
+        },
+    });
+
+    return res.json()
+}
+
+
 export async function checkAvailabilityUser(username) {
     const res = await fetch(`${config.apiUrl}/get`)
         .then((res) => res.json())

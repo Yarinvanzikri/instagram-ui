@@ -1,0 +1,16 @@
+@import "src/App";
+
+.Profile__header {
+
+  display: flex;
+  justify-content:center;
+
+}
+
+.Profile__content {
+
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}

@@ -1,11 +1,23 @@
 .Avatar {
   border-radius: 50%;
-  width: 35px;
-  height: 35px;
   overflow: hidden;
-  margin-bottom: 3px;
 
-  &__image {
+  img {
     width: 100%;
+  }
+
+  &.sm {
+    width: 30px;
+    height: 30px;
+  }
+
+  &.md {
+    width: 45px;
+    height: 45px;
+  }
+
+  &.lg {
+    width: 170px;
+    height:  170px;
   }
 }

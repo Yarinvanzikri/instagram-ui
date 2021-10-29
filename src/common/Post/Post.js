@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Avatar from "../Avatar/Avatar";
-import config from "../../config";
+import config from "../../config/index";
 import heartLike from "../../Feed/assets/heart.png";
 import "./Post.scss";
 
@@ -11,10 +12,16 @@ function Post(prop) {
             {posts.map((post) => {
                 return <div className={"post"} key={post._id}>
                     <div className={"Feed__author"}>
-                        <Avatar image={'https://ichef.bbci.co.uk/news/976/cpsprodpb/9397/production/_113838773_donkey.jpg'}/>
-                        <span>{post.author.username}</span>
+                        <Avatar size={'sm'}/>
+                        <Link to={'/profile/' + post.author.username} className={'userNameLink'}>
+                            <span className="Post_user_username">{post.author.username}</span>
+                        </Link>
                     </div>
-                    <img className={"image"} src={config.apiUrl + '/' + post.image} alt={"Thumbnail"}/>
+                    <div >
+                        <Link to={'/post/' + post._id}>
+                            <img src={config.apiUrl + '/' + post.image} className={'image'} alt={"Thumbnail"}/>
+                        </Link>
+                    </div>
                     <div className={"Feed__logo"}>
                         <a href={config.apiUrl+ '/'}>
                             <img  src={heartLike}  alt={'like button'}/>
