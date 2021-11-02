@@ -1,9 +1,6 @@
 @import 'src/App';
 .Feed {
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+
 
   &__author {
     display:flex;
@@ -42,20 +39,5 @@
     margin-left: 3%;
   }
 
-
-}
-.post {
-  border: 1px solid $textGrayColor;
-  width: 45%;
-  height: 35%;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  box-shadow: $shadow;
-
-
-}
-.image {
-  width: 100%;
-  height: 100%;
 
 }

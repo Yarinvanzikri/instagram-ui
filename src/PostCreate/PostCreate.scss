@@ -10,20 +10,33 @@
   width: 70%;
   margin-left:15%;
 
+  .preview {
+    width: 50%;
+    height: 50%;
+  }
+
+  .uploadButton {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+  }
+
   h1 {
     font-family: $cursiveFont;
     font-size: 58px;
   }
   &__input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     font-family: Montserrat, sans-serif;
     width: 100%;
-    height: 30px;
     line-height: 1em;
 
 
 }
   &__btn {
-      margin-top: 80%;
       margin-bottom: 10px;
       width: 100%;
       height: 45px;
@@ -40,8 +53,8 @@
   }
   textarea {
     resize: none;
-    width:100%;
-    height: 300%;
+    width:300px;
+    height: 200px;
     margin-top: 10px;
     border-radius: 8px;
     background-color: $backgroundMainColor;
@@ -51,7 +64,7 @@
     color: #cb1212;
     font-size: 10px;
     padding-left: 20%;
-    margin-top: 3px;
+    margin-top: 25px;
     font-weight: bold;
   }
 }

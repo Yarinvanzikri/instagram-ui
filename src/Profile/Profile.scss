@@ -1,2 +1,29 @@
 @import 'src/App';
 
+.Profile {
+
+  &__postHeader {
+    margin: auto 28%;
+    padding: 5px;
+  }
+
+  &__posts {
+
+  display: flex;
+  flex-direction: row;
+    flex-wrap: wrap;
+
+    .post{
+      width: 160%;
+      height: 160%;
+      &img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .post__mobile{
+      width: 33%;
+      height: 43%;
+    }
+}
+}

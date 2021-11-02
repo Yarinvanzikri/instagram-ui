@@ -32,7 +32,7 @@ export async function me() {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
-            Authorization: token
+            "Authorization": token
         },
     });
     return await res.json();
@@ -47,6 +47,16 @@ export async function getUser(username) {
         },
     });
 
+    return res.json()
+}
+export async function search(query) {
+    const token = localStorage.getItem('token');
+    const res = await fetch(`${config.apiUrl}/search/user/${query}`,{
+        headers: {
+            'content-type': "application/json",
+            Authorization: token
+        },
+    })
     return res.json()
 }
 

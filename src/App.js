@@ -8,11 +8,13 @@ import Header from "./Header/Header";
 import {me} from './services/user.service'
 import PostCreate from "./PostCreate/PostCreate";
 import Profile from "./Profile/Profile";
+import PostProfile from "./PostProfile/PostProfile";
+import Search from "./Search/Search";
 
 export const UserContext = createContext();
 
 function App() {
-    //const [loggedIn, setLoggedIn] = useState(!!localStorage.getItem('loggedIn'));
+    // const [loggedIn, setLoggedIn] = useState(!!localStorage.getItem('token'));
     const history = useHistory()
     const [user, setUser] = useState({});
     console.log(user)
@@ -39,6 +41,9 @@ function App() {
         <div className="App">
             {isLoggedIn(user) && <Header />}
             <Switch>
+                <Route  path={`/post/profile/:id`}>
+                    <PostProfile/>
+                </Route>
                 <Route  path={`/profile/:username`}>
                     <Profile/>
                 </Route>
@@ -50,6 +55,9 @@ function App() {
                 </Route>
                 <Route path={"/post/create"}>
                     <PostCreate/>
+                </Route>
+                <Route path={"/Search"}>
+                    <Search/>
                 </Route>
                 <Route exact path={"/"}>
                     <Feed />

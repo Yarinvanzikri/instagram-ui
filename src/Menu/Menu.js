@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlusSquare , faHome } from "@fortawesome/free-solid-svg-icons";
+import { faPlusSquare , faHome, faSearch } from "@fortawesome/free-solid-svg-icons";
 import './Menu.scss'
 function Menu(props) {
     return (
@@ -11,6 +11,11 @@ function Menu(props) {
                     <li>
                         <Link to={'/post/create'}>
                             <FontAwesomeIcon   icon={faPlusSquare} className={'icon'}/>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={'/search/user/'}>
+                            <FontAwesomeIcon   icon={faSearch} className={'icon'}/>
                         </Link>
                     </li>
                     <li>

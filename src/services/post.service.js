@@ -34,3 +34,15 @@ export async function getFeed() {
     const res = await fetch(config.apiUrl+'/post');
     return res.json();
 }
+export async function getPost(id) {
+    const token = localStorage.getItem("token");
+    if(!token) return [];
+    const res = await fetch(`${config.apiUrl}/post/profile/${id}`,{
+        method: 'GET',
+        header: {
+            'content-type': "application/json",
+            'Authorization': token
+        }
+    });
+    return res.json();
+}

@@ -9,7 +9,7 @@ function HeaderProfile() {
     return (
         <div>
             <Link to={`/user/${user.username}`} className={'profile'}>
-                <Avatar size={'md'}/>
+                <Avatar size={'md'} />
                 <div>{user.username}</div>
             </Link>
         </div>
