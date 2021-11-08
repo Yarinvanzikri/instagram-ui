@@ -1,14 +1,14 @@
 @import 'src/App';
 .Header {
-  height: 60px;
-  background: linear-gradient($textBlackColor, $textGrayColor, $textGrayColor, #ffffff );
+  height: 70px;
+  background: #ffffff ;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 15px;
   align-items: center;
   border: 1px solid $textGrayColor;
-  box-shadow: $shadow;
+  //box-shadow: $shadow;
 
 
   &__Logo {

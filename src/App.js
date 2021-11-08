@@ -24,7 +24,7 @@ function App() {
             .then(loggedUser => {
                 console.log(loggedUser)
                 if(!isLoggedIn(loggedUser)) {
-                    history.push('/sign-in');
+                    history.push('/register');
                     return;
                 }
                 setUser(loggedUser);

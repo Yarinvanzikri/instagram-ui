@@ -4,7 +4,7 @@ import './Logo.scss'
 function Logo() {
     return (
         <div className={'Logo'}>
-            <h1>Instagram</h1>
+            <img src={"https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"} alt={"logo"}/>
         </div>
     );
 }

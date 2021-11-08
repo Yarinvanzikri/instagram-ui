@@ -1,5 +1,9 @@
 @import "src/App";
 
+*{
+  text-decoration: none !important;
+  color: $textBlackColor
+}
 .Register {
   font-family: $cursiveFont;
   width: 400px;
@@ -19,6 +23,7 @@
 
   .form-group {
     margin-top: 15px;
+
   }
 
   input {

@@ -20,7 +20,10 @@ function Feed(props) {
     }, [])
     return (
         <div>
-            <Post posts={posts}/>
+            <div className="Feed__Wrapper">
+                <Post posts={posts}/>
+            </div>
+
         </div>
     )
 }

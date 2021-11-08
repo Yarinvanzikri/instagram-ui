@@ -1,4 +1,17 @@
 @import 'src/App';
+.Menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5px ;
+}
+.search {
+  width: 100%;
+  height: 100%;
+  background-color: $backgroundMainColor;
+
+}
+
 li{
   list-style: none;
   display: inline-block;

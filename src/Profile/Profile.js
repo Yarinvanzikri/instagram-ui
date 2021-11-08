@@ -4,11 +4,8 @@ import Post from '../common/Post/Post';
 import { getPosts } from '../services/post.service';
 import ProfileHeader from './ProfileHeader/ProfileHeader';
 import './Profile.scss'
-import isMobile from "../common/commonFunction/commonFunctions";
 
 export default function Profile() {
-    const isMobileBol = isMobile();
-    console.log(isMobileBol)
     const [posts, setPosts] = useState([]);
     const { username } = useParams();
 
@@ -24,7 +21,7 @@ export default function Profile() {
         <div className={"Profile"}>
             <ProfileHeader username={username} postNum={posts.length} />
             <h2 className={'Profile__postHeader'}>{`${username}'s Posts`}</h2>
-            <div className={isMobileBol ? "post__mobile" : "post"}>
+            <div className={"Profile__post"}>
                     <Post posts={posts} />
                 {/*key={post._id} data={post}*/}
             </div>

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Avatar from "../Avatar/Avatar";
 import config from "../../config/index";
 import heartLike from "../../Feed/assets/heart.png";
-import isMobile from "../commonFunction/commonFunctions"
 import "./Post.scss";
 import PostDate from "./PostDate/PostDate";
 
@@ -11,13 +10,12 @@ function Post(prop) {
 
 
 
-    let isMobileBol = isMobile();
-    console.log(isMobileBol)
+
     const posts = prop.posts;
     return (
-        <div  className={isMobileBol ? "Feed__mobile" :"Feed"}>
+        <div  className={"Feed"}>
             {posts.map((post) => {
-                return <div className={isMobileBol ? "post__mobile" : "post"} key={post._id}>
+                return <div className={"post"} style={{border: "1px solid #8e8e8e"}} key={post._id}>
                     <div className={"Feed__author"}>
                         <Avatar size={'sm'}/>
 

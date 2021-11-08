@@ -1,11 +1,15 @@
 //Color Variables
 $backgroundMainColor: #fafafa;
 $textBlackColor: #262626;
-$textGrayColor: #8e8e8e;
+$textGrayColor: #d0d0d0;
 $preValidationColor: #b2dffc;
 $validateColor: #0095f6;
 $cursiveFont:  'Dancing Script', cursive;
 $shadow: 0 0 5px 5px #dddddd;
+
+.App {
+  background-color: $backgroundMainColor;
+}
 
 
 

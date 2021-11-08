@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { search }  from '../services/user.service';
 import SearchResult from "./SearchResult/SearchResult";
+import './Search.scss';
 
 
 function Search(props) {
@@ -20,13 +21,15 @@ function Search(props) {
     },[query])
 
     return (
-        <div>
-            <h1>Search</h1>
+        <div className={"searchBar"}>
             <form>
-                <input  value={query} onChange={(e)=> {setQuery(e.target.value)}}/>
+                    <input  value={query} placeholder={'🔍 Search'} onChange={(e)=> {setQuery(e.target.value)}}/>
+                    <div className={"searchBar__result"}>
+                        <SearchResult users = {results}/>
+                    </div>
+
             </form>
-            <hr />
-            <SearchResult users = {results}/>
+
         </div>
     );
 }

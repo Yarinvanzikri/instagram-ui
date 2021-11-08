@@ -3,7 +3,7 @@ import {Form, Formik, Field, ErrorMessage} from 'formik';
 import {registerSchema} from "./register.schema";
 import {register} from "../services/user.service";
 import './Register.scss';
-import {useHistory} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
 
 function Register() {
@@ -52,6 +52,11 @@ function Register() {
                     </div>
                     <div className={"form-group"}>
                         <button className={"btn-Register"} type="submit">Register now!</button>
+                    </div>
+                    <div className={"form-group"}>
+                        <Link to={'/sign-in'}>
+                            Already a Member? Sign in Now
+                        </Link>
                     </div>
                 </Form>
             </Formik>

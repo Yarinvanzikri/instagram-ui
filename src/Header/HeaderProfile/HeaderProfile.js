@@ -8,7 +8,7 @@ function HeaderProfile() {
     const {user} = useContext(UserContext)
     return (
         <div>
-            <Link to={`/user/${user.username}`} className={'profile'}>
+            <Link to={`/profile/${user.username}`} className={'profile'}>
                 <Avatar size={'md'} />
                 <div>{user.username}</div>
             </Link>
