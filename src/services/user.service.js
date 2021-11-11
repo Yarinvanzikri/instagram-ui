@@ -46,7 +46,6 @@ export async function getUser(username) {
             Authorization: token
         },
     });
-
     return res.json()
 }
 export async function search(query) {
@@ -57,7 +56,27 @@ export async function search(query) {
             Authorization: token
         },
     })
-    return res.json()
+    return res.json();
+}
+
+export async function follow(username) {
+    return fetch(`${config.apiUrl}/user/${username}/follow`, {
+        method: 'POST',
+        headers: {
+            'content-type': "application/json",
+            Authorization: localStorage.getItem('token')
+        },
+    })
+}
+
+export async function unfollow(username) {
+    return fetch(`${config.apiUrl}/user/${username}/unfollow`, {
+        method: 'POST',
+        headers: {
+            'content-type': "application/json",
+            Authorization: localStorage.getItem('token')
+        },
+    })
 }
 
 

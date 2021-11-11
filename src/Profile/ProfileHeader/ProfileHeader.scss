@@ -5,8 +5,13 @@
   display: flex;
   justify-content:center;
 
-}
 
+}
+.Profile__avatar {
+  margin-bottom: 50px;
+  background: black;
+  border-radius: 50%;
+}
 .Profile__content {
 
   display: flex;

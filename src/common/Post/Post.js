@@ -5,6 +5,7 @@ import config from "../../config/index";
 import heartLike from "../../Feed/assets/heart.png";
 import "./Post.scss";
 import PostDate from "./PostDate/PostDate";
+import PostLike from "./PostLike/PostLike";
 
 function Post(prop) {
 
@@ -32,11 +33,11 @@ function Post(prop) {
                         </Link>
                     </div>
                     <div className={"Feed__logo"}>
-                        <a href={config.apiUrl+ '/'}>
-                            <img  src={heartLike}  alt={'like button'}/>
-                        </a>
+                        <PostLike likes={post.likes} postId={post._id}/>
+                        {/*<a href={config.apiUrl+ '/'}>*/}
+                        {/*    <img  src={heartLike}  alt={'like button'}/>*/}
+                        {/*</a>*/}
                     </div>
-                    <div className={'Feed__likes'}>likes {post.likes.length}  </div>
                     <div className={"Feed__content"}>{post.body}</div>
 
                 </div>

@@ -23,7 +23,7 @@ function PostProfile() {
     return (
         <div className="PostProfile">
             <h1>{`Post Profile`}</h1>
-            <img className={'imagePro'} src={config.apiUrl + '/' + post.image} alt={'Image Profile'}/>
+                <img className={'imagePro'} src={config.apiUrl + '/' + post.image} alt={'Image Profile'}/>
         </div>
     );
 }

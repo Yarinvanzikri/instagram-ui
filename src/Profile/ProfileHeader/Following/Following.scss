@@ -1,0 +1,26 @@
+@import "src/App";
+
+.Following {
+
+  .follow {
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    padding: 10px 44px;
+    font-size: 16px;
+    border-radius: 4px;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+
+  }
+  .unfollow {
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    padding: 10px 36px;
+    font-size: 16px;
+    border-radius: 4px;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  }
+
+}

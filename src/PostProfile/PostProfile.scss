@@ -1,9 +1,19 @@
 @import "src/App";
 
 .PostProfile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-  .imagePro{
-    width: 60%;
-    height: 60%;
+  h1 {
+    font-family: $cursiveFont;
+    font-size: 40px;
   }
+
+  img{
+    width: 80vw;
+    height: 50vw;
+  }
+
   }

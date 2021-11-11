@@ -1,11 +1,10 @@
 @import 'src/App';
 .Feed {
   display:flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 10px 20px;
+  gap: 10px 10px;
+  margin: 10px 3.8vw;
   @media screen and (min-width: 768px) {
 
     flex-direction: row;
