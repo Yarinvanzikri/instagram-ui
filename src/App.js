@@ -17,12 +17,12 @@ function App() {
     // const [loggedIn, setLoggedIn] = useState(!!localStorage.getItem('token'));
     const history = useHistory()
     const [user, setUser] = useState({});
-    console.log(user)
+    // console.log(user)
 
     useEffect(()=> {
         me()
             .then(loggedUser => {
-                console.log(loggedUser)
+                // console.log(loggedUser)
                 if(!isLoggedIn(loggedUser)) {
                     history.push('/register');
                     return;
@@ -41,9 +41,6 @@ function App() {
         <div className="App">
             {isLoggedIn(user) && <Header />}
             <Switch>
-                <Route  path={`/post/profile/:id`}>
-                    <PostProfile/>
-                </Route>
                 <Route  path={`/profile/:username`}>
                     <Profile/>
                 </Route>
@@ -56,8 +53,14 @@ function App() {
                 <Route path={"/post/create"}>
                     <PostCreate/>
                 </Route>
+                <Route  path={`/post/profile/:id`}>
+                    <PostProfile/>
+                </Route>
                 <Route path={"/Search"}>
-                    <Search/>
+                    <div className={"searchPage"}>
+                        <Search/>
+                    </div>
+
                 </Route>
                 <Route exact path={"/"}>
                     <Feed />

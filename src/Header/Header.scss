@@ -1,4 +1,12 @@
 @import 'src/App';
+
+.Header__wrapper {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  top: 0.1px;
+
+}
 .Header {
   height: 70px;
   background: #ffffff ;

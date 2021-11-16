@@ -1,12 +1,12 @@
 import config from '../config/index'
 
 export async function createPost(post) {
+    // console.log('post: ',post)
     const token = localStorage.getItem("token")
-    console.log(post);
-
     const form = new FormData();
     form.append('body', post.body);
     form.append('image', post.image);
+    form.append('filter', post.filter.filter)
 
 
     const res = await fetch(config.apiUrl+'/post', {
@@ -30,13 +30,14 @@ export async function getPosts(username) {
     return res.json();
 }
 
-export function postLike(postId) {
-    return fetch(config.apiUrl + '/post/' + postId +'/like', {
+export async function postLike(postId) {
+    const res = await fetch(config.apiUrl + '/post/' + postId +'/like', {
         method: 'POST',
         headers: {
             'Authorization': localStorage.getItem("token")
         }
     });
+    res.json()
 }
 
 export function postUnlike(postId) {

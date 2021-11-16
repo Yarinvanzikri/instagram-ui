@@ -1,0 +1,80 @@
+@import 'src/App';
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+img {
+  width: 460px;
+  height: 400px;
+}
+.container {
+  border: 1px solid $textGrayColor;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+  "image sidebar"
+  "slider sidebar";
+  height: 60vh;
+  width: 30vw;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.main-image {
+  grid-area: image;
+  width: 100%;
+  height: 100%;
+  background-position: top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
+.sidebar {
+  grid-area: sidebar;
+  background-color: white;
+  border-left: 1px solid hsl(203.7,100%,8.2%);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.sidebar-item {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: hsl(203.7,100%,48.2%);
+  padding: 1rem;
+  position: relative;
+  transition: background-color 150ms;
+}
+.sidebar-item.active {
+  background-color: hsl(203.7,100%,48.2%);
+}
+.sidebar-item:hover, .sidebar-item:focus {
+  background-color: hsl(203.7,100%,58.2%);
+}
+.sidebar-item::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  bottom: 0;
+  height: 1px;
+  background-color:white;
+}
+.sidebar-item:last-child::after {
+  display: none;
+}
+
+.slider-container {    // this class located inside the Slider component.
+  grid-area: slider;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+.slider {
+  width: 100%;
+  cursor: pointer;
+}

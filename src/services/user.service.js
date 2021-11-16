@@ -1,7 +1,7 @@
 import config from '../config/index'
 
 export async function register(user) {
-    console.log(user);
+    // console.log(user);
     const res = await fetch(config.apiUrl+'/user', {
                method: 'POST',
                body: JSON.stringify(user),
@@ -84,9 +84,9 @@ export async function checkAvailabilityUser(username) {
     const res = await fetch(`${config.apiUrl}/get`)
         .then((res) => res.json())
         .then((users) => {
-            console.log('users ' , users)
+            // console.log('users ' , users)
             const isValid = users.find(user => user.username === username);
-            console.log('isValid ',isValid)
+            // console.log('isValid ',isValid)
             return isValid;
         })
         .catch(false);

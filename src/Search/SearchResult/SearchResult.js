@@ -7,7 +7,7 @@ function SearchResult(props) {
     return (
         <div className={"SearchResult"} style={{background :"#fafafa"}}>
             {props.users.map((user) => {
-                console.log(user)
+                // console.log(user)
                 return (<div className={"SearchResult__result"}>
                             <Link to={'/profile/' + user.username}>
                                 <div className={"link"}>

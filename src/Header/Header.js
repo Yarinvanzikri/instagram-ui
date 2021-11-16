@@ -7,13 +7,16 @@ import Menu from "../Menu/Menu";
 
 function Header() {
     return (
-        <div className="Header">
-            <Link to={'/'} className={'Header__Logo'}>
-                <Logo />
-            </Link>
-            <Menu/>
-            <HeaderProfile />
+        <div className="Header__wrapper">
+            <div className="Header">
+                <Link to={'/'} className={'Header__Logo'}>
+                    <Logo />
+                </Link>
+                <Menu/>
+                <HeaderProfile />
+            </div>
         </div>
+
     );
 }
 

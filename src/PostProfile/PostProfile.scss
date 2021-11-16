@@ -2,9 +2,8 @@
 
 .PostProfile {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  padding: 0 15px;
 
   h1 {
     font-family: $cursiveFont;
@@ -12,7 +11,7 @@
   }
 
   img{
-    width: 80vw;
+    width: 50vw;
     height: 50vw;
   }
 

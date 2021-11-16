@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Avatar from "../Avatar/Avatar";
 import config from "../../config/index";
-import heartLike from "../../Feed/assets/heart.png";
 import "./Post.scss";
 import PostDate from "./PostDate/PostDate";
 import PostLike from "./PostLike/PostLike";
@@ -16,6 +15,7 @@ function Post(prop) {
     return (
         <div  className={"Feed"}>
             {posts.map((post) => {
+                // console.log('postFil: ',post.filter)
                 return <div className={"post"} style={{border: "1px solid #8e8e8e"}} key={post._id}>
                     <div className={"Feed__author"}>
                         <Avatar size={'sm'}/>
@@ -27,7 +27,7 @@ function Post(prop) {
                             <PostDate date={post.createdAt}/>
                         </div>
                     </div>
-                    <div >
+                    <div style={{filter: post.filter}}>
                         <Link to={'/post/profile/' + post._id}>
                             <img src={config.apiUrl + '/' + post.image} className={'image'} alt={"Thumbnail"}/>
                         </Link>

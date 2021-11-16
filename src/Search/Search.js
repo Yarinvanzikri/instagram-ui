@@ -16,15 +16,15 @@ function Search() {
         }
                 async function searchedUsers () {
                 const users = await search(query);
-                console.log(users);
+                // console.log(users);
                 setResults(users);
             }
                 searchedUsers();
     },[query]);
 
     {
-        console.log('query: ', query)
-        console.log('results: ', results)
+        // console.log('query: ', query)
+        // console.log('results: ', results)
     }
 
     return (

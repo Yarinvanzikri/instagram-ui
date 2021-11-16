@@ -6,7 +6,7 @@ import './Following.scss'
 
 function Following({ user, username }) {
     const { user: me , setUser: setMe } = useContext(UserContext);
-    console.log('me: ',me)
+    // console.log('me: ',me)
     const [isFollowing, setIdFollowing] =useState(me?.following?.includes(user._id));
 
 

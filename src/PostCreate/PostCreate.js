@@ -4,12 +4,14 @@ import {postCreateSchema} from './postSchema';
 import {createPost} from '../services/post.service'
 import './PostCreate.scss'
 import {useHistory} from "react-router-dom";
+import PostImageFilter from "./PostImageFilter/PostImageFilter";
 
 
 function PostCreate() {
     const [image, setImage] = useState('')
     const [preview, setPreviews] = useState('')
     const history =  useHistory();
+    const [filter, setFilter] = useState({filter: ""});
 
     useEffect(() =>{
         if (image){
@@ -24,14 +26,16 @@ function PostCreate() {
         },[image])
     async function submit(values) {
         try {
-            console.log(values)
-            await createPost(values);
+            // console.log(values)
+            await createPost({...values, filter});
+            setFilter({filter: ""})
             history.push('/');
         } catch (err) {
             console.log(err)
         }
     }
     const fileInputRef = useRef();
+    // console.log("filter: ", filter)
 
     return (
         <div className="PostCreate">
@@ -43,9 +47,7 @@ function PostCreate() {
                     {({ setFieldValue }) => (
                         <Form>
                             <div className={"PostCreate__input"}>
-                                {preview ? (<img
-                                    className={'preview'}
-                                    src={preview}/>) : (
+                                {preview ? (<PostImageFilter setFilter={setFilter} filter={filter} image={preview} />) : (
                                     <button className={'uploadButton'} onClick={(event) => {
                                         event.preventDefault();
                                         fileInputRef.current.click()
@@ -85,6 +87,7 @@ function PostCreate() {
                         </Form>
                     )}
                 </Formik>
+
             </div>
         );
 

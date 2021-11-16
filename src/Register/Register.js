@@ -13,7 +13,7 @@ function Register() {
        try{
            const user = await register(values);
            history.push('/sign-in'); //  push new future to the history.
-           console.log(user)
+           // console.log(user)
        } catch (e) {
            console.error(e);
        }
