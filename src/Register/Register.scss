@@ -46,9 +46,10 @@
     background: $preValidationColor;
     font-size: 18px;
     color: #ffffff;
-    border: 1px solid #1C0C5B;
+    border: 1px solid $validateColor;
     border-radius: 4px;
     transition: background-color 400ms ease-in-out;
+    cursor: pointer;
     &:hover {
       background: $validateColor;
       color: #ffffff;

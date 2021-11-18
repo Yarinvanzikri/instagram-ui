@@ -8,6 +8,7 @@
   border: 1px solid $textGrayColor;
   box-shadow: $shadow;
   width: 70%;
+  margin-top: 10vw;
   margin-left:15%;
 
   .preview {
@@ -19,6 +20,7 @@
     width: 55px;
     height: 55px;
     border-radius: 50%;
+    cursor: pointer;
   }
 
   h1 {
@@ -33,6 +35,7 @@
     font-family: Montserrat, sans-serif;
     width: 100%;
     line-height: 1em;
+
 
 
 }
@@ -58,6 +61,7 @@
     margin-top: 10px;
     border-radius: 8px;
     background-color: $backgroundMainColor;
+    outline: none;
   }
   .error {
     font-family: Montserrat, sans-serif;

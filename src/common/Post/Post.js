@@ -5,6 +5,7 @@ import config from "../../config/index";
 import "./Post.scss";
 import PostDate from "./PostDate/PostDate";
 import PostLike from "./PostLike/PostLike";
+import CommentCreate from "./CommentCreate/CommentCreate";
 
 function Post(prop) {
 
@@ -39,8 +40,13 @@ function Post(prop) {
                         {/*</a>*/}
                     </div>
                     <div className={"Feed__content"}>{post.body}</div>
-
+                    <footer>
+                        <div className={"commentsWrap"}>
+                            <CommentCreate postId={post._id}/>
+                        </div>
+                    </footer>
                 </div>
+
             })}
         </div>
     );

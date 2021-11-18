@@ -1,0 +1,124 @@
+@import 'src/App';
+.commentInput {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid $textGrayColor;
+    width: 100%;
+
+  .input {
+    display: flex;
+    border: 0;
+    background: #ffffff;
+    width:94%;
+    max-width:94%;
+    max-height:30%;
+    height: 3vw;
+    text-align: left;
+    outline: none;
+    white-space: pre-wrap;
+    padding: 15px 15px;
+    resize: none;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    &::placeholder {
+      text-align: left;
+      font-size: 16px;
+  }
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 3px;
+    }
+    &::-webkit-scrollbar-button {
+      width: 0px;
+      height: 0px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $validateColor;
+      border: 0px none #ffffff;
+      border-radius: 50px;
+
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: $preValidationColor;
+    }
+    &::-webkit-scrollbar-thumb:active {
+      background: $preValidationColor;
+    }
+    &::-webkit-scrollbar-track {
+      background: #ffffff;
+      border: 0px none #ffffff;
+      border-radius: 50px;
+    }
+    &::-webkit-scrollbar-track:hover {
+      background: #ffffff;
+    }
+    &::-webkit-scrollbar-track:active {
+      background: $validateColor;
+    }
+    &::-webkit-scrollbar-corner {
+      background: transparent;
+    }
+
+
+  }
+
+  .commentButton {
+    border: none;
+    color: $validateColor;
+    background: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 1.08vw 5px;
+    transition: all 400ms ease-in-out;
+    border-radius: 4px;
+    &:hover {
+      color: #ffffff;
+      background: $preValidationColor;
+    }
+  }
+}
+.comments {
+  height: 15vh;
+  width: 100%;
+  overflow: auto;
+  line-height: 1.6;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+  }
+  &::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $validateColor;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: $preValidationColor;
+  }
+  &::-webkit-scrollbar-thumb:active {
+    background: $preValidationColor;
+  }
+  &::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+  }
+  &::-webkit-scrollbar-track:hover {
+    background: #ffffff;
+  }
+  &::-webkit-scrollbar-track:active {
+    background: $validateColor;
+  }
+  &::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}

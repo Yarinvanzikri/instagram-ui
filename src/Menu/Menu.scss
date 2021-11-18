@@ -29,6 +29,9 @@ li{
   margin-right: 10px;
 
   &:hover {
-    opacity: 50%;
+    opacity: 80%;
+    background-color: #000000;
+    fill: white;
+    border-radius: 50%;
   }
 }

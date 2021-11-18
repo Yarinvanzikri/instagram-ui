@@ -65,3 +65,35 @@ export async function getPost(id) {
     });
     return res.json();
 }
+
+export async function getComments(postId) {
+    const token = localStorage.getItem("token");
+    if(!token) return [];
+    const res = await fetch(config.apiUrl + "/post/"+ postId + '/comment', {
+        method: "GET",
+        headers: {
+            'content-type': "application/json",
+            'Authorization': token
+        }
+    });
+    return res.json();
+}
+
+export async function createComment(postId, content) {
+    console.log(postId)
+    const token = localStorage.getItem("token");
+    if(!token) return [];
+    const res = await fetch( config.apiUrl+ "/post/"+postId+ "/comment",{
+        method: "POST",
+        body: JSON.stringify({
+            content
+        }),
+        headers: {
+            'content-type': "application/json",
+            'Authorization': token
+        }
+
+    });
+    return res.json();
+
+}

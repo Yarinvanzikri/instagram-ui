@@ -6,7 +6,7 @@ import './Login.scss'
 
 import {login} from "../services/login.service";
 import {me} from '../services/user.service'
-import {useHistory} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 function Login(values) {
     const history = useHistory();
     const {setUser} = useContext(UserContext);
@@ -47,6 +47,11 @@ function Login(values) {
                     </div>
                     <div>
                         <button className={"Login__btn"} type={"submit"}>Sign in </button>
+                    </div>
+                    <div className={"form-group"}>
+                        <Link to={'/register'}>
+                            Dont have account? <strong>Register Now</strong>
+                        </Link>
                     </div>
                 </Form>
             </Formik>

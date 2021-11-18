@@ -7,7 +7,7 @@ import './Following.scss'
 function Following({ user, username }) {
     const { user: me , setUser: setMe } = useContext(UserContext);
     // console.log('me: ',me)
-    const [isFollowing, setIdFollowing] =useState(me?.following?.includes(user._id));
+    const [isFollowing, setIsFollowing] =useState(me?.following?.includes(user._id));
 
 
     const handleFollow = () => {
@@ -17,7 +17,7 @@ function Following({ user, username }) {
                 .then(loggedUser => {
                     setMe(loggedUser);
                 })
-        }).catch(() => setIdFollowing(false));
+        }).catch(() => setIsFollowing(false));
     }
     const handleUnfollow = () => {
         // setIdFollowing(false);
@@ -25,12 +25,12 @@ function Following({ user, username }) {
             getMyself()
                 .then(loggedUser => {
                     setMe(loggedUser);
-                }).catch(() => setIdFollowing(true));
+                }).catch(() => setIsFollowing(true));
         });
     }
 
     useEffect(() =>{
-        setIdFollowing(me?.following?.includes(user._id))
+        setIsFollowing(me?.following?.includes(user._id))
     },[me, user]);
 
 

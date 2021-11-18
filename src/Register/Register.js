@@ -55,7 +55,7 @@ function Register() {
                     </div>
                     <div className={"form-group"}>
                         <Link to={'/sign-in'}>
-                            Already a Member? Sign in Now
+                            Already a Member? <strong>Sign in Now</strong>
                         </Link>
                     </div>
                 </Form>

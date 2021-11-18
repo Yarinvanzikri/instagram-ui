@@ -1,9 +1,31 @@
 @import "src/App";
 
+body {
+  background-color: $backgroundMainColor;
+}
 .PostProfile {
+
+  background-color: white;
+  position: relative;
   display: flex;
-  flex-direction: column;
   padding: 0 15px;
+  top: 5vw;
+
+  .padding {
+  width: 100%;
+  height: 5vw;
+  background: white;
+}
+  .wrapper {
+    border-radius: 4px;
+    box-shadow: $shadow;
+    border: 1px solid $textGrayColor;
+  }
+  .likey {
+    position: relative;
+    top: -4px;
+    border: 1px solid $textGrayColor;
+  }
 
   h1 {
     font-family: $cursiveFont;
@@ -11,8 +33,20 @@
   }
 
   img{
-    width: 50vw;
-    height: 50vw;
+    border: 1px solid $textGrayColor;
+    width: 40vw;
+    height: 30vw;
+  }
+  .comments {
+    width: 100%;
+    padding: 0 25px;
+
   }
 
   }
+.footer {
+  width: 100%;
+  height: 200px;
+  background: white;
+  box-shadow: $shadow;
+}
