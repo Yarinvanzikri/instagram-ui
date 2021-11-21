@@ -5,6 +5,7 @@ import config from '../config/index';
 import './PostProfile.scss';
 import PostLike from "../common/Post/PostLike/PostLike";
 import CommentCreate from "../common/Post/CommentCreate/CommentCreate";
+import PostDate from "../common/Post/PostDate/PostDate";
 
 function PostProfile() {
 
@@ -26,9 +27,11 @@ function PostProfile() {
     return (
             <div className="PostProfile">
                 {post && <div className={"wrapper"}>
-                    {console.log('posterer', post)}
-                    <h1>{`${post.author?.username}'s Post Profile`}</h1>
-                    <img className={'imagePro'} style={{filter: post.filter}} src={config.apiUrl + '/' + post.image} alt={'Image Profile'}/>
+                    <div className={"PostProfile__date"}>
+                        <h1>{`${post.author?.username}'s Post Profile`}</h1>
+                        <PostDate date={post.createdAt}/>
+                    </div>
+                    <img className={'imagePro'} style={{filter: post.filter}} src={config.apiUrl + '/' + post.image} alt={''}/>
                     <div className={"likey"}>
                         <PostLike likes={post.likes} postId={post._id}/>
                     </div>
@@ -37,7 +40,7 @@ function PostProfile() {
 
                 </div>}
                 {post && <footer>
-                    <CommentCreate postId={post._id} style={{height : "36vw" ,background: "#fafafa", borderRadius: "4px"}} />
+                    <CommentCreate postId={post._id} style={{height : "36vw" , width: "50vw", background: "#fafafa", borderRadius: "4px"}} />
                 </footer>}
         </div>
     );

@@ -11,7 +11,7 @@ function Feed(props) {
         const getPosts = async () => {
             try {
                 const posts = await getFeed();
-                console.log('numberOfPosts',posts.length);
+                // console.log('numberOfPosts',posts.length);
                 setPosts(posts);
             } catch (err) {
                 console.error(err);
@@ -24,6 +24,9 @@ function Feed(props) {
             <div className="Feed__Wrapper">
                 <Post posts={posts}/>
             </div>
+                <div className= 'footer'>
+
+                </div>
 
         </div>
     )

@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, { useState } from 'react';
 import Slider from './Slider/Slider';
 import './PostImageFilter.scss'
 import SliderItem from "./Slider/SliderItem/SliderItem";
@@ -124,7 +124,7 @@ function PostImageFilter({image, setFilter, filter}) {
     return (
         <div className={"container"}>
             <div className="main-image"  style={filter}>
-                <img src={image}/>
+                <img src={image} alt="images"/>
             </div>
             <div className="sidebar">
                 {options.map((option, index) => {

@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { search }  from '../services/user.service';
 import SearchResult from "./SearchResult/SearchResult";
-import {debounce} from 'lodash';
 import './Search.scss';
 
 
@@ -22,10 +21,6 @@ function Search() {
                 searchedUsers();
     },[query]);
 
-    {
-        // console.log('query: ', query)
-        // console.log('results: ', results)
-    }
 
     return (
         <div className={"searchBar"}>

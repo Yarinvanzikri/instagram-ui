@@ -30,6 +30,37 @@ export async function getPosts(username) {
     return res.json();
 }
 
+export async function deletePost(postId){
+    const token = localStorage.getItem("token")
+    if(token){
+        await fetch(`${config.apiUrl}/post/${postId}/delete`,{
+            method: 'DELETE',
+            headers: {
+                'Content-type': 'text/plain',
+                'Authorization': token
+                    }
+        })
+    }else{
+        return console.log('Post Has Not Been Found');
+    }
+}
+
+export async function deleteComment(id){
+    const token = localStorage.getItem("token")
+    // console.log("id-delete-comment::", id)
+    if(token){
+        await fetch(`${config.apiUrl}/post/comment/${id}/delete`,{
+            method: 'DELETE',
+            headers: {
+                'Content-type': 'text/plain',
+                'Authorization': token
+                 }
+        })
+    }else{
+        return console.log('Comment Has Not Been Found');
+    }
+}
+
 export async function postLike(postId) {
     const res = await fetch(config.apiUrl + '/post/' + postId +'/like', {
         method: 'POST',
@@ -80,7 +111,7 @@ export async function getComments(postId) {
 }
 
 export async function createComment(postId, content) {
-    console.log(postId)
+    // console.log(postId)
     const token = localStorage.getItem("token");
     if(!token) return [];
     const res = await fetch( config.apiUrl+ "/post/"+postId+ "/comment",{

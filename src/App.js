@@ -1,6 +1,6 @@
 import './App.scss';
 import Register from "./Register/Register";
-import {Route, Switch, useHistory, useParams} from "react-router-dom";
+import {Route, Switch, useHistory} from "react-router-dom";
 import Login from "./Login/Login";
 import {createContext, useEffect, useState} from "react";
 import Feed from "./Feed/Feed";
@@ -60,7 +60,6 @@ function App() {
                     <div className={"searchPage"}>
                         <Search/>
                     </div>
-
                 </Route>
                 <Route exact path={"/"}>
                     <Feed />

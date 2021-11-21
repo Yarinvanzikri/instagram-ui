@@ -5,6 +5,16 @@ body {
 }
 .PostProfile {
 
+  &__date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    font-size: 100%;
+    font-weight: bold;
+    margin-left: 3%;
+  }
+
   background-color: white;
   position: relative;
   display: flex;

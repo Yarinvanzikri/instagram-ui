@@ -11,7 +11,7 @@ function Register() {
 
    async function submit(values) {
        try{
-           const user = await register(values);
+           await register(values);
            history.push('/sign-in'); //  push new future to the history.
            // console.log(user)
        } catch (e) {

@@ -55,7 +55,6 @@ function PostCreate() {
                                         Upload Image
                                     </button>
                                 )}
-
                                 <input
                                     type={"file"}
                                     style={{ display: "none"}}

@@ -5,8 +5,7 @@ export const registerSchema = yup.object().shape({
     username: yup.string()
         .test("username", 'This Username has already been registered',async function (username)
         {
-            const temp = await checkAvailabilityUser(username);
-            // console.log(temp);
+            await checkAvailabilityUser(username);
             return await checkAvailabilityUser(username);
         })
         .min(3)

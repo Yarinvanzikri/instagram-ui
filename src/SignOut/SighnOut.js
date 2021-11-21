@@ -1,13 +1,10 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext} from 'react';
 import './SignOut.scss';
-import {useHistory, useParams} from "react-router-dom";
-import {me} from "../services/user.service";
 import {UserContext} from "../App";
 
 function SignOut({ username }) {
 
     const {user} = useContext(UserContext);
-    console.log('user', user.username)
 
 
     function removeToken (){

@@ -1,10 +1,12 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import Avatar from "../../common/Avatar/Avatar";
-import { getUser , me } from '../../services/user.service'
+import { getUser } from '../../services/user.service'
 import './ProfileHeader.scss'
 import Following from "./Following/Following";
 import {useParams} from "react-router-dom";
 import SignOut from "../../SignOut/SighnOut";
+import config from "../../config";
+import ProfileEdit from "../ProfileEdit/ProfileEdit";
 
 
 function ProfileHeader({username, postNum}) {
@@ -20,11 +22,12 @@ function ProfileHeader({username, postNum}) {
         initUser();
     },[username]);
 
+
     return (
         <div className={'Profile__header'}>
-
-            <div className={'profile__avatar'}>
-                <Avatar image={user.image} size={'lg'}/>
+            <div className={'profile__avatar'} >
+                <Avatar avatar={config.apiUrl + '/' + user.avatar} size={'lg'}/>
+                <ProfileEdit />
             </div>
             <div className={"Profile__content"}>
                 <h2>{user.username}</h2>

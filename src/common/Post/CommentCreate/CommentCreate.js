@@ -3,10 +3,10 @@ import {createComment, getComments} from "../../../services/post.service";
 import CommentList from "./CommentList/CommentList";
 import './CommentCreate.scss'
 
-function CommentCreate({postId , style}) {
+function CommentCreate({postId , style, username, postAuthor}) {
     const [value, setValue] = useState('');
     const [comments, setComments] = useState([]);
-    console.log(value)
+    // console.log(value)
 
     async function create (postId, value) {
        const commentData =  await createComment(postId, value);
@@ -15,16 +15,18 @@ function CommentCreate({postId , style}) {
     function submit(e) {
         e.preventDefault()
         create(postId, value)
+        setValue('')
     }
     useEffect(  ()=>{
         async function getPostComments(){
             const postComments = await getComments(postId)
             setComments(postComments)
 
+
         }
         getPostComments()
 
-    },[])
+    },[postId])
 
     return (
         <form >
@@ -38,7 +40,7 @@ function CommentCreate({postId , style}) {
                 </span>
             </div>
                 <div className={'comments'} style={style}>
-                        <CommentList   comments={comments} />
+                        <CommentList postAuthor={postAuthor} username={username} comments={comments} />
                 </div>
 
         </form>

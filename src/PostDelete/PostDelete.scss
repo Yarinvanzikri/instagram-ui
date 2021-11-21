@@ -1,0 +1,19 @@
+@import 'src/App';
+
+.del-btn {
+
+  border: none;
+  color: darkred;
+  background: $backgroundMainColor;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 400ms ease-in-out;
+  border-radius: 4px;
+  height: 100%;
+
+  &:hover {
+    color: #ffffff;
+    background: darkred;
+  }
+}

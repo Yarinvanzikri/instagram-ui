@@ -80,6 +80,23 @@ export async function unfollow(username) {
     })
 }
 
+export async function editUserProfile ({avatar},userMe){
+    // console.log("userService-- avatar::", avatar);
+    // console.log("userService-- userMe::", userMe)
+    const token = localStorage.getItem('token');
+    // console.log("userService-- token::", token)
+    // console.log(userMe)
+    const form = new FormData();
+    form.append('avatar', avatar);
+    fetch(`${config.apiUrl}/user/${userMe.username}/avatar`, {
+        method: 'PUT',
+        body: form,
+        headers: {
+            'Authorization': token
+        }
+    });
+}
+
 
 export async function checkAvailabilityUser(username) {
     const res = await fetch(`${config.apiUrl}/get`)
