@@ -2,18 +2,15 @@ import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
 import Avatar from "../Avatar/Avatar";
 import config from "../../config/index";
-import "./Post.scss";
 import PostDate from "./PostDate/PostDate";
 import PostLike from "./PostLike/PostLike";
 import CommentCreate from "./CommentCreate/CommentCreate";
 import {UserContext} from "../../App";
 import PostDelete from "../../PostDelete/PostDelete";
+import "./Post.scss";
 
 function Post(prop) {
    const { user } = useContext(UserContext);
-
-
-
 
     const posts = prop.posts;
     return (

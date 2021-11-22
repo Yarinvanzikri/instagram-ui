@@ -30,6 +30,20 @@ export async function getPosts(username) {
     return res.json();
 }
 
+export async function getFollowersFeed(username) {
+    console.log("username followers", username)
+    const token = localStorage.getItem("token");
+    if(!token) return [];
+    const res = await fetch(`${config.apiUrl}/user/${username}/followers-feed`, {
+        method: "Get",
+        headers: {
+            'content-type': "application/json",
+            'Authorization': token
+        }
+    });
+    return res.json();
+}
+
 export async function deletePost(postId){
     const token = localStorage.getItem("token")
     if(token){
@@ -96,6 +110,7 @@ export async function getPost(id) {
     });
     return res.json();
 }
+
 
 export async function getComments(postId) {
     const token = localStorage.getItem("token");

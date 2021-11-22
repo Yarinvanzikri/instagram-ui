@@ -16,7 +16,7 @@ function Menu(props) {
                             </div>
                         </li>
                         <li>
-                            <Link to={'/search'}>
+                            <Link to={'/explore'}>
                                 <div>
                                     <svg aria-label="Find People" className="_8-yf5 icon" color="#262626" fill="#262626" height="22"
                                          role="img" viewBox="0 0 48 48" width="22">

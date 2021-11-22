@@ -10,6 +10,7 @@ import PostCreate from "./PostCreate/PostCreate";
 import Profile from "./Profile/Profile";
 import PostProfile from "./PostProfile/PostProfile";
 import Search from "./Search/Search";
+import FollowersFeed from "./Feed/FollowersFeed/FollowersFeed";
 
 export const UserContext = createContext();
 
@@ -56,13 +57,16 @@ function App() {
                 <Route  path={`/post/profile/:id`}>
                     <PostProfile/>
                 </Route>
+                <Route  path={`/explore`}>
+                    <Feed/>
+                </Route>
                 <Route path={"/Search"}>
                     <div className={"searchPage"}>
                         <Search/>
                     </div>
                 </Route>
                 <Route exact path={"/"}>
-                    <Feed />
+                    <FollowersFeed/>
                 </Route>
             </Switch>
         </div>
