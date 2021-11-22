@@ -14,14 +14,14 @@ function FollowersPosts({posts}) {
 
     return <div className={"FollowersFeed"}>
         {posts.map((postArr) => {
-            console.log("---",postArr)
+            // console.log("---",postArr)
 
             return  postArr.map((post) => {
                 return <div className={"FollowersPost"} style={{border: "1px solid #8e8e8e"}} key={post._id}>
                     <div className={"FollowersFeed__author"}>
                         <Avatar size={'sm'} avatar={config.apiUrl + '/' + post.author.avatar} />
                         <Link to={'/profile/' + post.author.username} className={'userNameLink'}>
-                            <span ><strong>{post.author.username}</strong></span>
+                            <span >{post.author.username}</span>
                         </Link>
                         <div className={"FollowersPost__date"}>
                             <PostDate date={post.createdAt}/>

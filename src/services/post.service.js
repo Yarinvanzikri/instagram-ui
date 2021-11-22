@@ -31,7 +31,7 @@ export async function getPosts(username) {
 }
 
 export async function getFollowersFeed(username) {
-    console.log("username followers", username)
+    // console.log("username followers", username)
     const token = localStorage.getItem("token");
     if(!token) return [];
     const res = await fetch(`${config.apiUrl}/user/${username}/followers-feed`, {

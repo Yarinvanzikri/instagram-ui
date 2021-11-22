@@ -15,7 +15,7 @@ function FollowersFeed(props) {
                 const posts = await getFollowersFeed(user.username);
                 // console.log('numberOfPosts',posts.length);
                 setPosts(posts);
-                console.log('feed followers',posts)
+                // console.log('feed followers',posts)
             } catch (err) {
                 console.error(err);
             }
