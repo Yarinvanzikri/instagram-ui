@@ -2,6 +2,7 @@ import React from 'react';
 import Avatar from "../../common/Avatar/Avatar";
 import {Link} from "react-router-dom";
 import './SearchResult.scss'
+import config from "../../config";
 
 function SearchResult(props) {
     return (
@@ -12,7 +13,7 @@ function SearchResult(props) {
                             <Link to={'/profile/' + user.username}>
                                 <div className={"link"}>
                                         <h4 key={user._id}>{user.username}</h4>
-                                        <Avatar size={'sm'}/>
+                                        <Avatar url={config.apiUrl + '/'} avatar={user.avatar} size={'sm'}/>
                                 </div>
                             </Link>
                         </div>

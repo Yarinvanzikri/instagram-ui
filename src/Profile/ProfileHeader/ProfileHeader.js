@@ -26,7 +26,7 @@ function ProfileHeader({username, postNum}) {
     return (
         <div className={'Profile__header'}>
             <div className={'profile__avatar'} >
-                <Avatar avatar={config.apiUrl + '/' + user.avatar} size={'lg'}/>
+                <Avatar url={config.apiUrl + '/'} avatar={ user.avatar} size={'lg'}/>
                 <ProfileEdit />
             </div>
             <div className={"Profile__content"}>

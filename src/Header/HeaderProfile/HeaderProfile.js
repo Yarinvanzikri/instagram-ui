@@ -11,7 +11,7 @@ function HeaderProfile() {
     return (
         <div className="header-profile">
             <Link to={`/profile/${user.username}`} className={'profile'}>
-                <Avatar size={'md'} avatar={config.apiUrl + '/' + user.avatar} />
+                <Avatar size={'md'} url={config.apiUrl + '/'} avatar={ user.avatar} />
                 <div>{user.username}</div>
             </Link>
             <div className={'button'}>
