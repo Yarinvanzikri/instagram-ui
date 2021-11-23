@@ -1,4 +1,4 @@
-import React, {useContext, useRef, useState} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import './profileEdit.scss'
 import {editUserProfile } from "../../services/user.service";
 import {UserContext} from "../../App";
@@ -16,8 +16,6 @@ function ProfileEdit() {
 
 
     // const [myself, setMyself] =useState(me)
-
-
 
     async function submit (values){
         try{
@@ -59,7 +57,7 @@ function ProfileEdit() {
                                     </div>
                                     <div >
                                         <button type="submit"  className="ProfileEdit__Button"  onClick={()=>{
-                                                window.location.reload();
+
                                             }
                                         }>Upload Avatar</button>
                                     </div>
