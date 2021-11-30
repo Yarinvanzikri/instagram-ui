@@ -1,9 +1,9 @@
 import React, {useContext} from 'react';
 import {useState, useEffect} from 'react'
-import {UserContext} from "../../App";
+import {UserContext} from "../App";
 import './FollowersFeed.scss'
 import FollowersPosts from "./FollowersPosts/FollowersPosts";
-import {getFollowersFeed} from "../../services/post.service";
+import {getFollowersFeed} from "../services/post.service";
 
 function FollowersFeed(props) {
     const [posts, setPosts] = useState([]);
@@ -23,8 +23,8 @@ function FollowersFeed(props) {
         getPosts();
     }, [])
     return (
-        <div className={"Feed"}>
-            <div className="Feed__Wrapper">
+        <div className={"FollowersFeed"}>
+            <div className="FollowersFeed__Wrapper">
                 <FollowersPosts posts={posts}/>
             </div>
             <div className= 'footer'>

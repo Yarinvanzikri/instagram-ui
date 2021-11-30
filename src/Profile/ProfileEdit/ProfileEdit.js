@@ -5,7 +5,7 @@ import {UserContext} from "../../App";
 import {ErrorMessage, Form, Formik} from "formik";
 import {useParams} from "react-router-dom";
 
-function ProfileEdit() {
+function ProfileEdit(props) {
     const [avatar, setAvatar] =useState({});
     const [userMe, setUserMe] = useState({})
     const fileInputRef = useRef();
@@ -34,7 +34,7 @@ function ProfileEdit() {
                 onSubmit={submit}>
                 {({ setFieldValue }) => (
                 <Form>
-                    {user.username === username ?
+                    {(user.username === username) || (user.username === props.username) ?
                         <div>
                             <input
                                 className="ProfileEdit__input"

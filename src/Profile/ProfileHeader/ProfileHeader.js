@@ -11,7 +11,6 @@ import ProfileEdit from "../ProfileEdit/ProfileEdit";
 
 function ProfileHeader({username, postNum}) {
     const [user, setUser] = useState({});
-    const params = useParams();
 
 
     useEffect(() => {
@@ -26,13 +25,12 @@ function ProfileHeader({username, postNum}) {
     return (
         <div className={'Profile__header'}>
             <div className={'profile__avatar'} >
-                <Avatar url={config.apiUrl + '/'} avatar={ user.avatar} size={'lg'}/>
-                <ProfileEdit />
+                <Avatar url={config.apiUrl + '/'} username={user.username} avatar={ user.avatar} size={'lg'}/>
+
             </div>
             <div className={"Profile__content"}>
                 <h2>{user.username}</h2>
                 <p>{postNum} posts</p>
-                <SignOut username={params.username}/>
                 <Following user={user} username={username}/>
             </div>
         </div>

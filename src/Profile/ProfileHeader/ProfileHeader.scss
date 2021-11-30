@@ -4,12 +4,12 @@
 
   display: flex;
   justify-content:center;
+  align-items: flex-start;
   margin-top :15vw;
 
 
 }
 .Profile__avatar {
-  margin-bottom: 50px;
   background: black;
   border-radius: 50%;
 }

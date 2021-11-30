@@ -1,14 +1,12 @@
-@import 'src/App';
+@import '../../App';
 .FollowersFeed {
   display:flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 10px 10px;
+  gap: 10px ;
   margin: 10px 2vw;
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-
-  }
 
 
   &__author {
@@ -51,11 +49,21 @@
     font-size: 12px;
     margin-left: 3%;
   }
+  &__image {
+    width: 60vw;
+    height: 40vw;
+    object-fit: cover;
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
 
+
+    &:hover {
+      transform: scale(1.01);
+    }
 
 }
 .FollowersPost {
-  width: 30vw;
+  width: 60vw;
   box-shadow: $shadow;
   overflow: hidden;
   border-radius: 5px;
@@ -63,17 +71,7 @@
 
 
 }
-.image {
-  width: 30vw;
-  height: 20vw;
-  object-fit: cover;
-  transition: all 0.2s ease-in-out;
-  overflow: hidden;
 
-
-  &:hover {
-    transform: scale(1.01);
-  }
 
 }
 .userNameLink {

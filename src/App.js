@@ -10,7 +10,7 @@ import PostCreate from "./PostCreate/PostCreate";
 import Profile from "./Profile/Profile";
 import PostProfile from "./PostProfile/PostProfile";
 import Search from "./Search/Search";
-import FollowersFeed from "./Feed/FollowersFeed/FollowersFeed";
+import FollowersFeed from "./FollowersFeed/FollowersFeed";
 
 export const UserContext = createContext();
 

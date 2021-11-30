@@ -1,12 +1,12 @@
 import React, {useContext} from 'react';
-import Avatar from "../../../common/Avatar/Avatar";
-import config from "../../../config";
+import Avatar from "../../common/Avatar/Avatar";
+import config from "../../config";
 import {Link} from "react-router-dom";
-import PostDate from "../../../common/Post/PostDate/PostDate";
-import PostLike from "../../../common/Post/PostLike/PostLike";
-import PostDelete from "../../../PostDelete/PostDelete";
-import CommentCreate from "../../../common/Post/CommentCreate/CommentCreate";
-import {UserContext} from "../../../App";
+import PostDate from "../../common/Post/PostDate/PostDate";
+import PostLike from "../../common/Post/PostLike/PostLike";
+import PostDelete from "../../PostDelete/PostDelete";
+import CommentCreate from "../../common/Post/CommentCreate/CommentCreate";
+import {UserContext} from "../../App";
 import './FollowersPosts.scss'
 
 function FollowersPosts({posts}) {
@@ -29,7 +29,7 @@ function FollowersPosts({posts}) {
                     </div>
                     <div style={{filter: post.filter}}>
                         <Link to={'/post/profile/' + post._id}>
-                            <img src={config.apiUrl + '/' + post.image} className={'image'} alt={"Thumbnail"}/>
+                            <img src={config.apiUrl + '/' + post.image} className={'FollowersFeed__image'} alt={"Thumbnail"}/>
                         </Link>
                     </div>
                     <div className={"FollowersFeed__logo"}>

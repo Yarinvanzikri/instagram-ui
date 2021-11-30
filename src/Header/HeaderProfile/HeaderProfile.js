@@ -10,10 +10,10 @@ function HeaderProfile() {
     const { user } = useContext(UserContext)
     return (
         <div className="header-profile">
-            <Link to={`/profile/${user.username}`} className={'profile'}>
-                <Avatar size={'md'} url={config.apiUrl + '/'} avatar={ user.avatar} />
+
+                <Avatar size={'md'} username={user.username} url={config.apiUrl + '/'} avatar={ user.avatar} />
                 <div>{user.username}</div>
-            </Link>
+            {/*</Link>*/}
             <div className={'button'}>
                 {/*<SignOut username={username}/>*/}
             </div>
